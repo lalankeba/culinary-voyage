@@ -1,0 +1,19 @@
+.food-list {
+    margin: 12px 0px;
+}
+
+.food-list h2 {
+    padding: 12px 0px;
+    font-size: 1.5em;
+}
+
+.food-preview {
+    display: flex;
+    gap: 1rem;
+    padding: 8px 0px;
+    flex-wrap: wrap;
+}
+
+.food-preview img {
+    width: 100px;
+}
