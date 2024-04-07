@@ -4,9 +4,24 @@
     display: flex;
     padding: 8px;
     border-bottom: 1px solid rgb(184, 182, 182);
+    align-items: center;
 }
 
 .navbar h1 {
     font-size: 2em;
     margin: 16px 0px;
+}
+
+.navbar .links {
+    margin-left: auto;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.navbar a.active {
+    color: rgb(212, 84, 84);
 }

@@ -1,0 +1,25 @@
+.meal-previews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.meal-preview {
+    border: 1px solid gray;
+    border-radius: 16px;
+    margin: 20px 0px;
+    cursor: pointer;
+    max-width: 160px;
+}
+
+.meal-preview img {
+    margin: 0;
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.meal-preview h4 {
+    margin: 16px 0;
+    text-align: center;
+}
