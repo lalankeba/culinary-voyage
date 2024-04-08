@@ -29,7 +29,7 @@ export const Cocktails = () => {
             <div className="cocktail-previews">
             { data && 
             data.map((item) => (
-                <div className="cocktail-preview" key={item.id} onClick={() => navigate(`/cocktail/${item.id}`)}>
+                <div className="cocktail-preview" key={item.id} onClick={() => navigate(`/cocktails/${item.id}`)}>
                     <img src={item.image} alt={item.title} />
                     <h4>{ item.title }</h4>
                 </div>
