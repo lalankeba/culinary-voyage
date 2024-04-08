@@ -5,6 +5,7 @@ import { Cocktails } from './pages/Cocktails';
 import { Meals } from './pages/Meals';
 import { Meal } from './pages/Meal';
 import { Cocktail } from './pages/Cocktail';
+import { NotFound } from './pages/NotFound';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                 <Route path='cocktails' element={ <Cocktails /> } />
                 <Route path='meal/:id' element={ <Meal /> } />
                 <Route path='cocktail/:id' element={ <Cocktail /> } />
+                <Route path='*' element={ <NotFound /> } />
               </Routes>
             </div>
           </main>
