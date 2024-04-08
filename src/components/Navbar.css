@@ -25,6 +25,10 @@
     font-weight: 600;
 }
 
+.navbar a:hover {
+    background-color: rgb(238, 234, 234);
+}
+
 .navbar a.active {
     color: rgb(255, 255, 255);
     background-color: rgb(212, 84, 84);
