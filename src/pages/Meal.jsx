@@ -15,17 +15,30 @@ export const Meal = () => {
             { isPending && <div>Loading...</div> }
             { data && 
                 <div className="meal-detail">
-                    <div className="meal-detail-intro">
+                    <div className="meal-detail-heading">
                         <img src={data.image} alt={data.title} />
-                        <h4>{ data.title }</h4>
+                        <div>
+                            <h2>{ data.title }</h2>
+                            <p>Category: <i>{ data.category }</i></p>
+                            <p>Area: <i>{ data.area }</i></p>
+                            { data.tags.length !== 0 && 
+                            <p>Tags: 
+                            { data.tags.map((tag) => (
+                                <span key={tag} className="meal-tag">{ tag }</span>
+                            )) }
+                            </p>
+                            }
+                        </div>
                     </div>
-                    <p>{ data.instructions }</p>
-                    <h5>Ingredients</h5>
-                    <ul>
-                    { data.ingMea.map((ingMeaItem) => (
-                        <li key={ingMeaItem.ing + ingMeaItem.mea}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
-                    )) }
-                    </ul>
+                    <div className="meal-detail-body">
+                        <p>{ data.instructions }</p>
+                        <h5>Ingredients</h5>
+                        <ul>
+                        { data.ingMea.map((ingMeaItem) => (
+                            <li key={ingMeaItem.ing + ingMeaItem.mea}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
+                        )) }
+                        </ul>
+                    </div>
                 </div>
             }
             </section>

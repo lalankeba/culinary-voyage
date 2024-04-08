@@ -15,17 +15,30 @@ export const Cocktail = () => {
             { isPending && <div>Loading...</div> }
             { data && 
                 <div className="cocktail-detail">
-                    <div className="cocktail-detail-intro">
+                    <div className="cocktail-detail-heading">
                         <img src={data.image} alt={data.title} />
-                        <h4>{ data.title }</h4>
+                        <div>
+                            <h2>{ data.title }</h2>
+                            <p>Category: <i>{ data.category }</i></p>
+                            <p>Glass: <i>{ data.glass }</i></p>
+                            { data.tags.length !== 0 && 
+                            <p>Tags: 
+                            { data.tags.map((tag) => (
+                                <span key={tag} className="cocktail-tag">{ tag }</span>
+                            )) }
+                            </p>
+                            }
+                        </div>
                     </div>
-                    <p>{ data.instructions }</p>
-                    <h5>Ingredients</h5>
-                    <ul>
-                    { data.ingMea.map((ingMeaItem) => (
-                        <li key={ingMeaItem.ing + ingMeaItem.mea}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
-                    )) }
-                    </ul>
+                    <div className="meal-detail-body">
+                        <p>{ data.instructions }</p>
+                        <h5>Ingredients</h5>
+                        <ul>
+                        { data.ingMea.map((ingMeaItem) => (
+                            <li key={ingMeaItem.ing + ingMeaItem.mea}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
+                        )) }
+                        </ul>
+                    </div>
                 </div>
             }
             </section>

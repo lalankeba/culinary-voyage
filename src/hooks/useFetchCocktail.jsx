@@ -53,12 +53,26 @@ export const useFetchCocktail = (drinkId) => {
             return ingredientsAndMeasurements;
           }
 
+          const getTags = (txtValue) => {
+            let array = [];
+            if (txtValue !== null) {
+              const rowArray = txtValue.split(",");
+              array = rowArray.map(val => val.trim()).filter((val) => {
+                return val !== '';
+              });
+            }
+            return array;
+          }
+
           uData.drinks.map((item) => {
             let element = {
               id: item.idDrink,
               title: item.strDrink,
               image: item.strDrinkThumb,
               instructions: item.strInstructions,
+              category: item.strCategory,
+              glass: item.strGlass,
+              tags: getTags(item.strTags),
               ingMea: getIngredientsAndMeasurements(item)
             };
             fData = element;

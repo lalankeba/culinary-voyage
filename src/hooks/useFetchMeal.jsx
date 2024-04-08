@@ -48,12 +48,26 @@ export const useFetchMeal = (mealId) => {
             return ingredientsAndMeasurements;
           }
 
+          const getTags = (txtValue) => {
+            let array = [];
+            if (txtValue !== null) {
+              const rowArray = txtValue.split(",");
+              array = rowArray.map(val => val.trim()).filter((val) => {
+                return val !== '';
+              });
+            }
+            return array;
+          }
+
           uData.meals.map((item) => {
             let element = {
               id: item.idMeal,
               title: item.strMeal,
               image: item.strMealThumb,
               instructions: item.strInstructions,
+              category: item.strCategory,
+              area: item.strArea,
+              tags: getTags(item.strTags),
               ingMea: getIngredientsAndMeasurements(item)
             };
             fData = element;
