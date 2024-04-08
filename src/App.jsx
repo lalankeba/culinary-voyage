@@ -22,8 +22,8 @@ function App() {
                 <Route index element={ <Meals /> } />
                 <Route path='meals' element={ <Meals /> } />
                 <Route path='cocktails' element={ <Cocktails /> } />
-                <Route path='meals/:id' element={ <Meal /> } />
-                <Route path='cocktails/:id' element={ <Cocktail /> } />
+                <Route path='meal/:id' element={ <Meal /> } />
+                <Route path='cocktail/:id' element={ <Cocktail /> } />
                 <Route path='*' element={ <NotFound /> } />
               </Routes>
             </div>
