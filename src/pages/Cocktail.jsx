@@ -23,7 +23,7 @@ export const Cocktail = () => {
                     <h5>Ingredients</h5>
                     <ul>
                     { data.ingMea.map((ingMeaItem) => (
-                        <li key={ingMeaItem.ing}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
+                        <li key={ingMeaItem.ing + ingMeaItem.mea}>{ ingMeaItem.ing }: { ingMeaItem.mea }</li>
                     )) }
                     </ul>
                 </div>
