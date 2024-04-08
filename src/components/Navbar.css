@@ -12,11 +12,16 @@
     margin: 16px 0px;
 }
 
+.navbar a {
+    color: #273b67;
+    text-decoration: none;
+}
+
 .navbar .links {
     margin-left: auto;
 }
 
-.navbar a {
+.links a {
     margin-left: 20px;
     text-decoration: none;
     padding: 8px 16px;
@@ -25,11 +30,11 @@
     font-weight: 600;
 }
 
-.navbar a:hover {
+.links a:hover {
     background-color: rgb(238, 234, 234);
 }
 
-.navbar a.active {
+.links a.active {
     color: rgb(255, 255, 255);
     background-color: rgb(212, 84, 84);
 }
