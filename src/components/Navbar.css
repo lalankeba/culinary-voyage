@@ -19,9 +19,13 @@
 .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    padding: 8px;
+    padding: 8px 16px;
+    color: #3B5998;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .navbar a.active {
-    color: rgb(212, 84, 84);
+    color: rgb(255, 255, 255);
+    background-color: rgb(212, 84, 84);
 }
