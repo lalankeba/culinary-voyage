@@ -15,6 +15,11 @@ export const useFetchCocktail = (drinkId) => {
             const url = `${cocktailBaseUrl}?i=${drinkId}`;
             const response = await fetch(url);
             if (response.ok) {
+              const contentType = response.headers.get('Content-Type');
+              if (!contentType || !contentType.includes('application/json')) {
+                throw new Error(`Could not fetch cocktail by id ${drinkId}`);
+              }
+
               const jsonData = await response.json();
               if (jsonData.drinks === null) {
                 setData(null);
@@ -26,7 +31,8 @@ export const useFetchCocktail = (drinkId) => {
               throw Error(`Could not fetch cocktail by id ${drinkId}`);
             }
           } catch (error) {
-              setError(error.message);
+            console.error(error);
+            setError(error.message);
           } finally {
             setIsPending(false);
           }

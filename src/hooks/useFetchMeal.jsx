@@ -18,10 +18,11 @@ export const useFetchMeal = (mealId) => {
               const jsonData = await response.json();
               if (jsonData.meals === null) {
                 setData(null);
+                setError(`Could not fetch meal by id ${mealId}`);
               } else {
                 setData(formatData(jsonData));
+                setError(null);
               }
-              setError(null);
             } else {
               throw Error(`Could not fetch meal by id ${mealId}`);
             }
