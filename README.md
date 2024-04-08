@@ -2,6 +2,11 @@
 
 Discover global recipes and cocktails
 
+## Install Dependencies
+```bash
+npm install
+```
+
 ## build
 
 ```bash
